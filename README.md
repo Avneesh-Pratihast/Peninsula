@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🏝️ Peninsula
+# 🏞️ Peninsula
 
-### *The sleek, fluid, and native Dynamic Island for Windows 11.*
+### *Not an island. A peninsula for your desktop.*
 
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/Avneesh-Pratihast/Peninsula)
 [![Built with Rust](https://img.shields.io/badge/Built%20With-Rust-DEA584?style=for-the-badge&logo=rust&logoColor=black)](https://www.rust-lang.org/)
@@ -14,12 +14,13 @@
 <br />
 
 <p align="center">
-  <b>Peninsula</b> brings the iconic Dynamic Island experience to Windows — completely native, hardware-accelerated, and engineered with zero focus theft.
+  <b>Peninsula</b> brings the fluid, contextual magic of modern floating HUDs to Windows — completely native, hardware-accelerated, and engineered with zero focus theft.
   <br />
-  Enjoy fluid media controls, hardware volume & brightness HUDs, drag-and-drop file shelves, microphone/camera privacy indicators, and local AI agent alerts anchored seamlessly to your screen's top bezel.
+  Enjoy adaptive media playback, hardware volume & brightness HUDs, drag-and-drop file shelves, microphone/camera privacy indicators, and local AI agent alerts anchored seamlessly to your screen's top bezel.
 </p>
 
 <p align="center">
+  <a href="#-the-idea">The Idea</a> •
   <a href="#-quick-download">Download .exe</a> •
   <a href="#-key-features">Key Features</a> •
   <a href="#-architecture--performance">Architecture</a> •
@@ -30,6 +31,15 @@
 ---
 
 </div>
+
+## 💡 The Idea
+
+> An iPhone's Dynamic Island floats detached in display space around a camera cutout. But on a monitor, your interface grows directly out of the top screen bezel.
+>
+> Geographically speaking: **a piece of land attached to the mainland isn't an island — it’s a peninsula.**
+>
+> Witty? Yes. Technically accurate? Absolutely. Beautiful on your desktop? You bet.
+
 
 ## ✨ Key Features
 

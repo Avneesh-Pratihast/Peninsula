@@ -1,7 +1,7 @@
 {
   "name": "peninsula",
   "version": "1.0.0",
-  "description": "Peninsula - Sleek, fluid, and native Dynamic Island for Windows 11",
+  "description": "Not an island. A peninsula for your desktop. Sleek, fluid, and native Dynamic Island for Windows 11",
   "main": "ui/index.html",
   "scripts": {
     "tauri": "tauri",
