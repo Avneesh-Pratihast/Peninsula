@@ -41,7 +41,7 @@
 > Witty? Yes. Technically accurate? Absolutely. Beautiful on your desktop? You bet.
 
 
-<img width="667" height="53" alt="image" src="https://github.com/user-attachments/assets/7fe48ee3-15cb-491c-af24-fd298d95a09a" />
+<img width="440" height="45" alt="image" src="https://github.com/user-attachments/assets/45e67965-de7a-4b59-babc-a3457c12b30b" />
 
 ## ✨ Key Features
 
