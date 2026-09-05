@@ -39,6 +39,8 @@
 > Geographically speaking: **a piece of land attached to the mainland isn't an island — it’s a peninsula.**
 >
 > Witty? Yes. Technically accurate? Absolutely. Beautiful on your desktop? You bet.
+> <img width="406" height="47" alt="image" src="https://github.com/user-attachments/assets/e930f688-20f4-487e-8558-a5fe8d8b0f0d" />
+
 
 
 ## ✨ Key Features
