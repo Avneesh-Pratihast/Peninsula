@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peninsula</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="island-wrapper" id="island-wrapper">
+    <div id="island-container" class="island-pill mode-idle">
+      <div class="island-ear ear-left"></div>
+      <div class="island-ear ear-right"></div>
+    
+    <!-- IDLE NOTCH MODE (White Dot + Centered Standby Clock: 140 × 32 DIP) -->
+    <div id="deck-idle" class="deck active">
+      <div class="notch-row-idle">
+        <div class="privacy-container" id="privacy-container-idle">
+          <span class="privacy-dot" id="privacy-dot"></span>
+          <div class="voice-equalizer-bars" id="voice-equalizer-ring">
+            <div class="v-bar v1"></div>
+            <div class="v-bar v2"></div>
+            <div class="v-bar v3"></div>
+            <div class="v-bar v4"></div>
+          </div>
+        </div>
+        <span class="idle-clock" id="idle-clock">00:00</span>
+      </div>
+    </div>
+
+    <!-- DRAG HOVER MODE (NotchDrop Pre-expansion: 280 × 72 DIP) -->
+    <div id="deck-drag-hover" class="deck">
+      <div class="drag-hover-zone">
+        <span class="drag-icon">📥</span>
+        <span class="drag-text">Drop Files onto Peninsula</span>
+      </div>
+    </div>
+
+    <!-- MEDIA COMPACT NOTCH (User Image Layout: Dot + Clock + Prev + Vinyl + Next + Equalizer: 235 × 32 DIP) -->
+    <div id="deck-media-compact" class="deck">
+      <div class="notch-row-media">
+        <!-- Left: Status Dot & Persistent Clock -->
+        <div class="notch-left-group">
+          <div class="privacy-container" id="privacy-container-compact">
+            <span class="privacy-dot" id="compact-privacy-dot"></span>
+            <div class="voice-equalizer-bars" id="compact-voice-ring">
+              <div class="v-bar v1"></div>
+              <div class="v-bar v2"></div>
+              <div class="v-bar v3"></div>
+              <div class="v-bar v4"></div>
+            </div>
+          </div>
+          <span class="compact-clock" id="compact-clock">00:00</span>
+        </div>
+
+        <!-- Center: Nav Controls & visionOS Squircle with Orbital Progress Arc -->
+        <div class="notch-center-group">
+          <button class="btn-notch-nav" id="btn-notch-prev">
+            <svg viewBox="0 0 24 24"><path d="M7 5a1 1 0 0 1 1 1v12a1 1 0 1 1-2 0V6a1 1 0 0 1 1-1zm10.7 1.45a1 1 0 0 0-1.5-.83L8.8 11.17a1 1 0 0 0 0 1.66l7.4 5.55a1 1 0 0 0 1.5-.83V6.45z"/></svg>
+          </button>
+          
+          <div class="art-orbital-cluster" id="art-orbital-cluster">
+            <!-- 22×22px Apple Superellipse Squircle -->
+            <div class="art-squircle" id="art-squircle">
+              <img id="compact-thumb-img" class="squircle-thumb-img" src="" alt="Art" />
+              <div class="squircle-fallback" id="compact-art-icon">🎵</div>
+              <div class="glass-glint"></div>
+              
+              <!-- Frosted Glass Play/Pause Hover Overlay -->
+              <div class="squircle-hover-ctrl" id="squircle-hover-ctrl">
+                <svg id="squircle-hover-icon" viewBox="0 0 24 24" class="squircle-hover-svg">
+                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-notch-nav" id="btn-notch-next">
+            <svg viewBox="0 0 24 24"><path d="M17 5a1 1 0 0 0-1 1v12a1 1 0 1 0 2 0V6a1 1 0 0 0-1-1zM6.3 6.45a1 1 0 0 1 1.5-.83l7.4 5.55a1 1 0 0 1 0 1.66l-7.4 5.55a1 1 0 0 1-1.5-.83V6.45z"/></svg>
+          </button>
+        </div>
+
+        <!-- Right: The Exact Old Glowing 4-Bar Equalizer -->
+        <div class="notch-right-group">
+          <div class="compact-wave playing wave-expandable" id="compact-wave">
+            <div class="bar b1"></div>
+            <div class="bar b2"></div>
+            <div class="bar b3"></div>
+            <div class="bar b4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEDIA HOVER CARD (Glanceable Controls, No Scrubber: 300 × 80 DIP) -->
+    <div id="deck-media-hover" class="deck">
+      <div class="hover-card-row">
+        <div class="hover-art-box">
+          <img id="hover-art" class="hover-art" src="" alt="Art" />
+          <div class="hover-art-ph" id="hover-art-ph">🎵</div>
+        </div>
+        <div class="hover-metadata">
+          <div class="hover-title" id="hover-title">Nothing Playing</div>
+          <div class="hover-artist" id="hover-artist">System Media</div>
+        </div>
+        <div class="hover-controls">
+          <button class="btn-ctrl-sm" id="btn-hover-prev" aria-label="Previous">
+            <svg class="ctrl-svg-sm" viewBox="0 0 24 24"><path d="M5 5a1 1 0 0 1 2 0v14a1 1 0 1 1-2 0V5zm14.4 1.34a1 1 0 0 0-1.55-.84l-9.5 6a1 1 0 0 0 0 1.7l9.5 6A1 1 0 0 0 19.4 17.66V6.34z"/></svg>
+          </button>
+          <button class="btn-ctrl-sm-primary" id="btn-hover-toggle" aria-label="Play / Pause">
+            <svg id="hover-play-svg" class="ctrl-svg-sm" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <button class="btn-ctrl-sm" id="btn-hover-next" aria-label="Next">
+            <svg class="ctrl-svg-sm" viewBox="0 0 24 24"><path d="M19 5a1 1 0 0 0-2 0v14a1 1 0 0 0 2 0V5zM4.6 6.34a1 1 0 0 1 1.55-.84l9.5 6a1 1 0 0 1 0 1.7l-9.5 6A1 1 0 0 1 4.6 17.66V6.34z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEDIA EXPANDED RICH DRAWER (Dynamic Island Native Drop: 288 × 156 DIP) -->
+    <div id="deck-media-expanded" class="deck">
+      <div class="art-ambient-bloom" id="art-ambient-bloom"></div>
+
+      <!-- Header: Art + Meta + Far-Right Animated Equalizer -->
+      <div class="deck-header">
+        <div class="deck-art-box">
+          <img id="media-art" class="deck-art" src="" alt="Art" />
+          <div class="deck-art-placeholder" id="media-art-ph">🎵</div>
+          <div class="glass-glint"></div>
+        </div>
+        <div class="deck-meta">
+          <div class="deck-title-row">
+            <span class="deck-title" id="media-title">Nothing Playing</span>
+            <div class="expanded-wave-slot">
+              <div class="expanded-mini-wave playing" id="expanded-mini-wave">
+                <span class="m-bar mb1"></span>
+                <span class="m-bar mb2"></span>
+                <span class="m-bar mb3"></span>
+                <span class="m-bar mb4"></span>
+              </div>
+            </div>
+          </div>
+          <div class="deck-artist-row">
+            <span class="deck-artist" id="media-artist">System Media</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scrubber: Precision Track + Refined Tabular Timestamps -->
+      <div class="deck-scrub">
+        <span class="scrub-timestamp" id="media-time-current">0:00</span>
+        <div class="scrub-bar" id="media-progress-bar">
+          <div class="scrub-fill" id="media-progress-fill">
+            <div class="scrub-head" id="scrub-head"></div>
+          </div>
+          <div class="scrub-tooltip" id="scrub-tooltip">0:00</div>
+        </div>
+        <span class="scrub-timestamp" id="media-time-duration">0:00</span>
+      </div>
+
+      <!-- Controls: Precision Transport (Naked Skip Glyphs + Floating Glass Play Disc) -->
+      <div class="deck-controls">
+        <button class="control-btn-skip" id="btn-prev" aria-label="Previous">
+          <svg viewBox="0 0 24 24"><path d="M7 5a1 1 0 0 1 1 1v12a1 1 0 1 1-2 0V6a1 1 0 0 1 1-1zm10.7 1.45a1 1 0 0 0-1.5-.83L8.8 11.17a1 1 0 0 0 0 1.66l7.4 5.55a1 1 0 0 0 1.5-.83V6.45z"/></svg>
+        </button>
+        <button class="control-btn-primary" id="btn-toggle" aria-label="Play / Pause">
+          <svg id="expanded-play-svg" class="ctrl-svg-play" viewBox="0 0 24 24"><path d="M9.5 5.5a1 1 0 0 0-1.5.86v11.28a1 1 0 0 0 1.5.86l10-5.64a1 1 0 0 0 0-1.72l-10-5.64z"/></svg>
+        </button>
+        <button class="control-btn-skip" id="btn-next" aria-label="Next">
+          <svg viewBox="0 0 24 24"><path d="M17 5a1 1 0 0 0-1 1v12a1 1 0 1 0 2 0V6a1 1 0 0 0-1-1zM6.3 6.45a1 1 0 0 1 1.5-.83l7.4 5.55a1 1 0 0 1 0 1.66l-7.4 5.55a1 1 0 0 1-1.5-.83V6.45z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- VOLUME HUD MODE (240 × 32 DIP - Exact MediaCompact Golden Ratio Match) -->
+    <div id="deck-volume" class="deck">
+      <div class="vol-notch-row">
+        <span class="vol-icon" id="vol-icon">🔊</span>
+        <div class="vol-bar-bg" id="vol-bar-bg">
+          <div class="vol-bar-fill" id="vol-bar-fill">
+            <div class="vol-bar-head" id="vol-bar-head"></div>
+          </div>
+        </div>
+        <span class="vol-percent" id="vol-percent">50%</span>
+      </div>
+    </div>
+
+    <!-- BRIGHTNESS HUD MODE (240 × 32 DIP - Exact MediaCompact Golden Ratio Match) -->
+    <div id="deck-brightness" class="deck">
+      <div class="bright-notch-row">
+        <span class="bright-icon" id="bright-icon">🔆</span>
+        <div class="bright-bar-bg" id="bright-bar-bg">
+          <div class="bright-bar-fill" id="bright-bar-fill">
+            <div class="bright-bar-head" id="bright-bar-head"></div>
+          </div>
+        </div>
+        <span class="bright-percent" id="bright-percent">100%</span>
+      </div>
+    </div>
+
+    <!-- CLIPBOARD TOAST MODE -->
+    <div id="deck-clipboard" class="deck">
+      <div class="clip-color-swatch" id="clip-swatch"></div>
+      <span class="clip-icon" id="clip-icon">📋</span>
+      <span class="clip-text" id="clip-text">Copied to clipboard</span>
+      <button id="btn-collapse-clip" class="btn-icon-close" aria-label="Dismiss">✕</button>
+    </div>
+
+    <!-- FILE SHELF MODE (NotchDrop) -->
+    <div id="deck-file-shelf" class="deck">
+      <div class="shelf-header">
+        <span class="shelf-title">📂 File Shelf</span>
+        <span class="shelf-count" id="shelf-count">0 files</span>
+        <button id="btn-collapse-shelf" class="btn-icon-close" aria-label="Close Shelf">✕</button>
+      </div>
+      <div class="shelf-files" id="shelf-files">
+        <!-- Dynamically rendered staged file chips -->
+      </div>
+      <div class="shelf-actions">
+        <button class="btn-shelf-action" id="btn-zip-files">📦 Zip All</button>
+        <button class="btn-shelf-action" id="btn-reveal-files">📂 Open</button>
+        <button class="btn-shelf-action-danger" id="btn-clear-shelf">🗑️ Clear</button>
+      </div>
+    </div>
+
+    <!-- AGENT ALERT MODE (ping-island) -->
+    <div id="deck-agent" class="deck">
+      <div class="agent-top">
+        <span class="agent-orb" id="agent-orb">🤖</span>
+        <div class="agent-info">
+          <span class="agent-title" id="agent-title">Agent Task</span>
+          <span class="agent-subtitle" id="agent-subtitle">Completed</span>
+        </div>
+        <span class="agent-source" id="agent-source">CLI</span>
+        <button id="btn-collapse-agent" class="btn-icon-close" aria-label="Dismiss">✕</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

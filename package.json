@@ -1,0 +1,18 @@
+{
+  "name": "peninsula",
+  "version": "1.0.0",
+  "description": "Peninsula - Sleek, fluid, and native Dynamic Island for Windows 11",
+  "main": "ui/index.html",
+  "scripts": {
+    "tauri": "tauri",
+    "build": "tauri build"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.4"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.11.1"
+  }
+}

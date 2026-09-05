@@ -1,0 +1,54 @@
+[package]
+name = "isle"
+version = "0.1.0"
+description = "Isle - Dynamic Island for Windows"
+authors = ["Avneesh"]
+edition = "2021"
+rust-version = "1.77.2"
+
+[lib]
+name = "isle_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.6.3", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+log = "0.4"
+tauri = { version = "2.11.3", features = [] }
+tauri-plugin-log = "2"
+crossbeam-channel = "0.5"
+windows-core = "0.58"
+zip = { version = "2.2", default-features = false, features = ["deflate"] }
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.58", features = [
+    "implement",
+    "Win32_Foundation",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_UI_Input_KeyboardAndMouse",
+    "Win32_UI_Controls",
+    "Win32_UI_Shell",
+    "Win32_UI_HiDpi",
+    "Win32_Graphics_Gdi",
+    "Win32_Graphics_Dwm",
+    "Win32_System_Com",
+    "Win32_System_Com_StructuredStorage",
+    "Win32_System_Ole",
+    "Win32_System_SystemServices",
+    "Win32_System_DataExchange",
+    "Win32_System_Threading",
+    "Win32_System_LibraryLoader",
+    "Win32_System_WinRT",
+    "Win32_System_Power",
+    "Win32_System_Registry",
+    "Win32_System_Wmi",
+    "Win32_Media_Audio",
+    "Win32_Media_Audio_Endpoints",
+    "Media_Control",
+    "Storage_Streams",
+    "Foundation",
+    "Foundation_Collections"
+] }
